@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TAMU</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('project 2/sx.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #000;
+      color: white;
+    }
+    h1, h2, p {
+      text-align: center;
+    }
+    .container {
+      background: rgba(0, 0, 50, 0.6);
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+    }
+    input, button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1em;
+    }
+    input {
+      background-color: #fff;
+      color: #000;
+    }
+    button {
+      background: linear-gradient(to right, #007BFF, #28a745);
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: linear-gradient(to right, #ff7f00, #28a745);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 50, 0.8);
+      font-size: 0.9em;
+      color: #fff;
+    }
+    .main-heading {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 3em;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .slogan {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.3em;
+      text-align: center;
+      margin: 5px 0 15px 0;
+    }
+    .subheading {
+      font-size: 1.2em;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .services {
+      margin-top: 40px;
+      text-align: center;
+      display: none;
+    }
+    .services h2 {
+      margin-bottom: 10px;
+    }
+    .services .service-btn {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #ff007f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .services .service-btn:hover {
+      background-color: #e60073;
+    }
+    .locations {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1em;
+    }
+  </style>
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/your_property_id/1your_widget_id';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+</head>
+<body>
+  <div class="main-heading">TAMU</div>
+  <div class="slogan">The Best Sexsite</div>
+  <div class="subheading">Join and Enjoy</div>
+
+  <div class="container">
+    <form id="registerForm">
+      <input type="text" id="phone" placeholder="Phone Number" required />
+      <input type="number" id="amount" placeholder="Amount (KSh 100 to register)" required />
+      <button type="submit">Register</button>
+    </form>
+    <p id="registerStatus"></p>
+  </div>
+
+  <div class="locations">
+    <strong>Locations:</strong> Nairobi, Nakuru, Naivasha, Online
+  </div>
+
+  <div class="services" id="servicesSection">
+    <h2>Woman Services</h2>
+    <button class="service-btn">One Nightstand</button>
+    <button class="service-btn">Shots</button>
+    <button class="service-btn">Sexy Videos</button>
+    <button class="service-btn">Pics</button>
+    <button class="service-btn">Sextapes</button>
+
+    <h2>Men Services</h2>
+    <button class="service-btn">One Nightstand</button>
+    <button class="service-btn">Sexy Videos</button>
+    <button class="service-btn">Pics</button>
+    <button class="service-btn">Sextapes</button>
+  </div>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const phone = document.getElementById("phone").value;
+      const amount = parseInt(document.getElementById("amount").value);
+
+      if (amount !== 100) {
+        document.getElementById("registerStatus").textContent = "You must pay exactly KSh 100 to register.";
+        return;
+      }
+
+      alert(`You will receive an M-PESA prompt to enter your PIN to pay KSh 100 to Account: 01022710005490`);
+
+      setTimeout(() => {
+        document.getElementById("registerStatus").textContent = "Payment successful. Welcome to TAMU!";
+        document.getElementById("servicesSection").style.display = "block";
+        window.location.href = "https://wa.me/254103215691?text=Hello%20admin%2C%20I%20have%20sent%20KSh%20100%20to%20register%20on%20TAMU";
+      }, 3000);
+    });
+  </script>
+
+  <footer>
+    &copy; 2025 TAMU<br>
+    Powered by New Generation
+  </footer>
+</body>
+</html>
